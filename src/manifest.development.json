@@ -8,6 +8,11 @@
         "default_popup": "popup.html"
     },
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "permissions":["tabs",
+        // get ip address
+        "http://pv.sohu.com/cityjson?ie=utf-8",
+        // test http 
+        "http://httpbin.org/"],
     "content_scripts": [{
         "matches": [
          "*://*.baidu.com/*"

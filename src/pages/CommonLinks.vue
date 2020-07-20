@@ -18,7 +18,9 @@
 
       <el-table-column width="180px" align="center" label="URL">
         <template slot-scope="{ row }">
-          <span>{{ row.url }}</span>
+          <a target="_blank" :href="row.url">
+            <el-link type="info" @click="goTo(row.url)">{{ row.url }}</el-link>
+          </a>
         </template>
       </el-table-column>
 
@@ -56,6 +58,11 @@
 
 <script>
 export default {
+  // methods:{
+  //   goTo(e) {
+  //     window.location.href = e
+  //   }
+  // },
   data() {
     return {
       list: [
